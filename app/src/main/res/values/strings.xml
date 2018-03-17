@@ -1,150 +1,40 @@
 <resources>
     <string name="app_name">AndroidTestUI</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Strings related to Main -->
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_main_settings">Settings</string>
-    <string name="tab_title_main_1">Cards</string>
-    <string name="tab_title_main_2">Dialogs</string>
-    <string name="tab_title_main_3">Widgets</string>
-    <string name="main_snack_bar">This is a snack bar</string>
-    <string name="main_snack_bar_action">Okay</string>
-
-    <string name="main_card_title">Title goes here</string>
-    <string name="main_card_title_short">Title</string>
-    <string name="main_card_subtitle">Subtitle here</string>
-    <string name="main_card_details">Details here</string>
-    <string name="main_card_button_1">ACTION 1</string>
-    <string name="main_card_button_2">ACTION 2</string>
-    <string name="main_flat_button_1_clicked">Flat Button 1</string>
-    <string name="main_flat_button_2_clicked">Flat Button 2</string>
-
-    <string name="dialog_ok">OK</string>
-    <string name="dialog_cancel">Cancel</string>
-    <string name="main_dialog_simple">Simple dialog</string>
-    <string name="main_dialog_simple_title">A simple dialog</string>
-    <string name="main_dialog_simple_message">
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion. "
-        "\nThe material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic."</string>
-    <string name="main_dialog_single_choice">Single choice dialog</string>
-    <string name="main_dialog_multi_choice">Multi choice dialog</string>
-    <string name="main_dialog_progress_title">Progress dialog...</string>
-    <string name="main_dialog_progress">Progress dialog</string>
-    <string name="main_dialog_data_picker">Date Picker Dialog</string>
-    <string name="main_dialog_data_time">Time Picker Dialog</string>
-    <string name="main_dialog_bottom">Bottom Dialog</string>
-    <string name="main_dialog_fullscreen">Fullscreen Dialog</string>
-    <string name="main_popup_menu">Popup Menu</string>
-
-    <string name="main_widget_toggle_button">Toggle Button</string>
-    <string name="main_widget_switch">Switch</string>
-    <string name="main_widget_check_box">Check Box</string>
-    <string name="main_widget_check_box_1">CheckBox 1</string>
-    <string name="main_widget_check_box_2">CheckBox 2</string>
-    <string name="main_widget_check_box_3">CheckBox 3</string>
-    <string name="main_widget_radio">Radio Group and Radio Buttons</string>
-    <string name="main_widget_radio_button_1">RadioButton 1</string>
-    <string name="main_widget_radio_button_2">RadioButton 2</string>
-    <string name="main_widget_radio_button_3">RadioButton 3</string>
-    <string name="main_widget_seek_bar">Seek Bar</string>
-    <string name="main_widget_progress_bar">Progress Bar</string>
-    <string name="main_widget_extract_edit_text">Extract Edit Text</string>
-    <string name="main_widget_text_input_layout">Text Input Layout</string>
-    <string name="main_widget_edit_text">edit text</string>
-    <string name="main_widget_spinner">Spinner</string>
-    <string name="main_widget_data_picker">Date Picker</string>
-    <string name="main_widget_time_picker">Time Picker</string>
-
-    <string name="nav_header_text">Click to start login activity</string>
-    <string name="nav_recycler_view">Recycler View</string>
-    <string name="nav_scrolling">Scrolling</string>
-    <string name="nav_fullscreen">FullScreen</string>
-    <string name="nav_bottom_navigation">Bottom Navigation</string>
-    <string name="nav_settings">Settings</string>
-    <string name="nav_group_about">About</string>
-    <string name="nav_about_this">About Me</string>
-    <string name="nav_share">Share</string>
-    <string name="nav_feedback">Feedback</string>
-    <string name="nav_donate">Donate</string>
-    <string name="nav_rate">Rate</string>
-    <string name="main_feedback_email">Feedback:MaterialDesign</string>
-    <string name="main_not_found_email">Not found email app</string>
-    <string name="nav_my_apps">My Apps</string>
-    <string name="nav_color">Material Design Color</string>
 
     <!-- Strings related to Scrolling -->
-    <string name="title_activity_scrolling">Scrolling</string>
-    <string name="large_text">
-
-    </string>
 
     <!-- Strings related to Fullscreen -->
-    <string name="title_activity_fullscreen">Fullscreen</string>
 
     <!-- String related to RecyclerView -->
-    <string name="title_activity_recycler_view">RecyclerView</string>
-    <string name="tv_recycler_item_1">Swipe down to refresh</string>
-    <string name="tv_recycler_item_2">Swipe left or right to dismiss it</string>
-    <string name="tv_recycler_item_3">Drag up or down to move it</string>
-    <string name="title_activity_share_view">Share View</string>
-    <string name="share_view_press_it">Press it</string>
 
     <!-- String related to Login -->
-    <string name="title_activity_login">Login</string>
-    <string name="login_user_name_hint">phone or email</string>
-    <string name="login_user_name_password">password</string>
-    <string name="action_sign_in">Login</string>
-    <string name="forgot_password">Forgot password?</string>
-    <string name="register">Register</string>
-    <string name="error_invalid_name">Invalid user name</string>
-    <string name="error_invalid_password">At least 4</string>
-    <string name="error_incorrect_password">Incorrect password</string>
-    <string name="error_no_name">Input your phone or email</string>
-    <string name="error_no_password">Input your password</string>
-    <string name="snackbar_forgot_password">Oh oh !</string>
-    <string name="snackbar_register">Oh oh !</string>
 
-    <!-- Strings related to Settings -->
-    <string name="title_activity_settings">Settings</string>
-    <string name="settings_switch_preference_title">Switch Preference</string>
-    <string name="settings_switch_preference_summary">Switch Preference Summary</string>
-    <string name="settings_check_box_preference_title">Check Box Preference</string>
-    <string name="settings_edit_text_preference_title">Edit Text Preference</string>
-    <string name="settings_edit_text_preference_default_value">Material Design</string>
-    <string name="settings_list_preference_dialog_title">List Preference</string>
-    <string name="settings_list_preference_title">List Preference</string>
-    <string name="settings_multi_select_list_preference_dialog_title">Multi Select List Preference</string>
-    <string name="settings_multi_select_list_preference_title">Multi Select List Preference</string>
-    <string name="settings_preference_click_title">OnPreferenceClickListener</string>
-    <string name="settings_preference_click_to_activity">Click to start an activity</string>
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="pref_on_preference_click">onPreferenceClick</string>
+    <string name="selected_time">The time you picked will be shown here.</string>
+    <string name="selected_date">The date you picked will be shown here.</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="original_button">Framework Picker</string>
+    <string name="mode_24_hours">Use 24 hour mode</string>
+    <string name="mode_dark">Use dark theme</string>
+    <string name="mode_custom_accent">Use custom accent</string>
+    <string name="vibrate">Vibrate on touch</string>
+    <string name="dismiss">Dismiss on pause (eg: orientation change)</string>
+    <string name="title">Show a title</string>
+    <string name="show_version_2">Use marshmallow layout</string>
+    <string name="show_year_first">Show the year picker first</string>
+    <string name="enable_seconds">Show seconds picker</string>
+    <string name="limit_times">Limit selectable times</string>
+    <string name="limit_dates">Limit selectable dates</string>
+    <string name="disable_times">Disable specific times</string>
+    <string name="highlight_dates">Highlight certain dates</string>
+    <string name="switch_orientation">Switch scroll orientation</string>
 
-    <!-- String related to About -->
-    <string name="title_activity_about">About Me</string>
-    <string name="about_version">Version: </string>
-    <string name="about_email_intent">About:MaterialDesign</string>
-    <string name="about_not_found_email">Not found email app</string>
-    <string name="about_card1_title">Material Design Demo</string>
-    <string name="about_card1_message">Hey, glad to see you! Thanks for using the app.</string>
-    <string name="about_card2_title">If you liked the app, feel free to contact me.</string>
-    <string name="about_google_play">Rate on Google play</string>
-    <string name="about_email">Feedback by E-mail</string>
-    <string name="about_git_hub">Source code on GitHub</string>
-    <string name="about_address">Beijing, China</string>
 
-    <!-- String related to About -->
-    <string name="activity_donate">Donate</string>
-    <string name="donate_title">I Would Be Very Grateful If You Could Donate Me ! </string>
-    <string name="donate_title_after">Thanks For Your Donation, I Am Very Grateful ! </string>
-    <string name="donate_low">1.99 USD</string>
-    <string name="donate_high">9.99 USD</string>
-    <string name="donate_exception">Sorry, can not do this!</string>
+    <string name="tab_title_time">Time</string>
+    <string name="tab_title_date">Date</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/new_login_gradients"
+    tools:context=".newBookingClass">
+
+    <EditText
+        android:id="@+id/in_date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="82dp"
+        android:layout_toEndOf="@+id/btn_time" />
+
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/in_date"
+        android:layout_alignBottom="@+id/in_date"
+        android:layout_alignParentStart="true"
+        android:text="SELECT DATE" />
+
+    <EditText
+        android:id="@+id/in_time"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/in_date"
+        android:layout_toEndOf="@+id/btn_time" />
+
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_date"
+        android:layout_alignStart="@+id/btn_date"
+        android:layout_below="@+id/btn_date"
+        android:text="SELECT TIME" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Search" />
+
+    <CheckBox
+        android:id="@+id/checkBeamer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_time"
+        android:layout_marginTop="35dp"
+        android:text="Room must include beamer" />
+
+    <CheckBox
+        android:id="@+id/checkWhiteboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/checkBeamer"
+        android:text="Room must include a whiteboard" />
+
+    <CheckBox
+        android:id="@+id/checkWindows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/checkWhiteboard"
+        android:layout_below="@+id/checkWhiteboard"
+        android:text="Room must include windows that can be opened" />
+
+</RelativeLayout>

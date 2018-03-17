@@ -7,71 +7,84 @@ import android.support.v7.app.AppCompatActivity;
  * Created by edgar on 14-3-2018.
  */
 
-import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TimePicker;
 
-public class newBookingClass extends AppCompatActivity
+import java.util.Calendar;
+
+public class newBookingClass extends AppCompatActivity implements View.OnClickListener
 {
-    ViewPager viewPager;
-    PickerAdapter adapter;
+    Button btnDatePicker, btnTimePicker, submitSearch;
+    EditText txtDate, txtTime;
+    private int mYear, mMonth, mDay, mHour, mMinute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_maindatetime);
+        setContentView(R.layout.datetimepicker_layout);
 
-        adapter = new PickerAdapter(getFragmentManager());
-        viewPager = findViewById(R.id.pager);
-        viewPager.setAdapter(adapter);
+        btnDatePicker=findViewById(R.id.btn_date);
+        btnTimePicker=findViewById(R.id.btn_time);
+        txtDate=findViewById(R.id.in_date);
+        txtTime=findViewById(R.id.in_time);
+        submitSearch = findViewById(R.id.search);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-        for(int i=0;i<adapter.getCount();i++) //noinspection ConstantConditions
-            tabLayout.getTabAt(i).setText(adapter.getTitle(i));
+        btnDatePicker.setOnClickListener(this);
+        btnTimePicker.setOnClickListener(this);
+        submitSearch.setOnClickListener(this);
+
+
     }
 
-    private class PickerAdapter extends FragmentPagerAdapter {
-        private static final int NUM_PAGES = 2;
-        Fragment timePickerFragment;
-        Fragment datePickerFragment;
+    @Override
+    public void onClick(View v) {
 
-        PickerAdapter(FragmentManager fm) {
-            super(fm);
-            timePickerFragment = new TimePickerFragment();
-            datePickerFragment = new DatePickerFragment();
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+
+                            txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
         }
+        if (v == btnTimePicker) {
 
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
+            // Get Current Time
+            final Calendar c = Calendar.getInstance();
+            mHour = c.get(Calendar.HOUR_OF_DAY);
+            mMinute = c.get(Calendar.MINUTE);
 
-        @Override
-        public Fragment getItem(int position) {
-            switch(position) {
-                case 0:
-                    return timePickerFragment;
-                case 1:
-                default:
-                    return datePickerFragment;
-            }
-        }
+            // Launch Time Picker Dialog
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                    new TimePickerDialog.OnTimeSetListener() {
 
-        int getTitle(int position) {
-            switch(position) {
-                case 0:
-                    return R.string.tab_title_time;
-                case 1:
-                default:
-                    return R.string.tab_title_date;
-            }
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay,
+                                              int minute) {
+
+                            txtTime.setText(hourOfDay + ":" + minute);
+                        }
+                    }, mHour, mMinute, true);
+            timePickerDialog.show();
         }
     }
 }

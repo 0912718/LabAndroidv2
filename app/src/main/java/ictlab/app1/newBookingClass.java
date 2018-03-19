@@ -11,6 +11,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -22,6 +23,7 @@ public class newBookingClass extends AppCompatActivity implements View.OnClickLi
     Button btnDatePicker, btnTimePicker, submitSearch;
     EditText txtDate, txtTime;
     private int mYear, mMonth, mDay, mHour, mMinute;
+    CheckBox cBeamer, cWhiteboard, cWindows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,12 @@ public class newBookingClass extends AppCompatActivity implements View.OnClickLi
         btnTimePicker=findViewById(R.id.btn_time);
         txtDate=findViewById(R.id.in_date);
         txtTime=findViewById(R.id.in_time);
+
         submitSearch = findViewById(R.id.search);
+
+        cBeamer = findViewById(R.id.checkBeamer);
+        cWhiteboard = findViewById(R.id.checkWhiteboard);
+        cWindows = findViewById(R.id.checkWindows);
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
@@ -86,5 +93,17 @@ public class newBookingClass extends AppCompatActivity implements View.OnClickLi
                     }, mHour, mMinute, true);
             timePickerDialog.show();
         }
+        if(v == submitSearch){
+            if (cBeamer.isChecked() && cWhiteboard.isChecked() && cWindows.isChecked()) {
+                System.out.println("check1");
+            } if (!cBeamer.isChecked() && cWhiteboard.isChecked() && cWindows.isChecked()) {
+                System.out.println("check2");
+            }
+        }
     }
+
 }
+//https://github.com/geronald10/GomesStudioReservation/blob/master/app/src/main/java/gomes/com/gomesstudioreservation/BookingActivity.java
+// https://www.tutorialspoint.com/android/android_json_parser.htm
+// http://codetheory.in/android-filters/
+

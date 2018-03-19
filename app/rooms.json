@@ -1,0 +1,18 @@
+[{
+"roomnumber": "H4308",
+"hasBeamer": "yes",
+"hasWhiteboard": "yes",
+"hasOpenWindows": "yes"
+},
+{
+"roomnumber": "H4312",
+"hasBeamer": "no",
+"hasWhiteboard": "yes",
+"hasOpenWindows": "no"
+},
+{
+"roomnumber": "H4318",
+"hasBeamer": "yes",
+"hasWhiteboard": "no",
+"hasOpenWindows": "yes"
+}]

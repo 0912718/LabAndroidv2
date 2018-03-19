@@ -24,51 +24,6 @@ public class afterLoginSuccess extends AppCompatActivity {
 
         mainGrid = findViewById(R.id.mainGrid);
 
-        //Set Event
-        //setSingleEvent(mainGrid);
-        //setToggleEvent(mainGrid);
-    }
-
-    private void setToggleEvent(GridLayout mainGrid) {
-        //Loop all child item of Main Grid
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            final CardView cardView = (CardView) mainGrid.getChildAt(i);
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
-                        //Change background color
-                        cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
-                        Toast.makeText(afterLoginSuccess.this, "State : True", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        //Change background color
-                        cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
-                        Toast.makeText(afterLoginSuccess.this, "State : False", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-    }
-
-    private void setSingleEvent(GridLayout mainGrid) {
-        //Loop all child item of Main Grid
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
-            //You can see , all child item is CardView , so we just cast object to CardView
-            CardView cardView = (CardView) mainGrid.getChildAt(i);
-            final int finalI = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-//                    Intent intent = new Intent(afterLoginSuccess.this,ActivityOne.class);
-//                    intent.putExtra("info","This is activity from card item index  "+finalI);
-//                    startActivity(intent);
-
-                }
-            });
-        }
     }
 
     public void bookingCardClick(View view){

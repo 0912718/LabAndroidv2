@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -30,20 +30,19 @@
                 android:src="@drawable/logohr"/>
 
             <EditText
+                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:background="@android:color/transparent"
-                android:drawablePadding="12dp"
-                android:padding="8dp"
-                android:hint="Studentnumber"
-                android:textColorHint="#ffffff"
-                android:maxLines="1"
-                android:drawableLeft="@drawable/ic_person_white_24dp"
                 android:layout_marginTop="70dp"
-                />
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_person_white_24dp"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Studentnumber"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColorHint="#ffffff" />
 
 
             <View
@@ -110,4 +109,4 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

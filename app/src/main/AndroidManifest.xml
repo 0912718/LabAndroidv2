@@ -28,6 +28,7 @@
         </activity>
         <activity android:name=".afterLoginSuccess" />
         <activity android:name=".newBookingClass" />
+        <activity android:name=".qrCodeClass" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"

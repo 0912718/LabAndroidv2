@@ -34,6 +34,7 @@
 
     <string name="tab_title_time">Time</string>
     <string name="tab_title_date">Date</string>
+    <string name="title_activity_main">MainActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

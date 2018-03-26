@@ -1,18 +1,18 @@
 [{
 "roomnumber": "H4308",
-"hasBeamer": "yes",
-"hasWhiteboard": "yes",
-"hasOpenWindows": "yes"
+"hasBeamer": false,
+"hasWhiteboard": true,
+"hasOpenWindows": true
 },
 {
 "roomnumber": "H4312",
-"hasBeamer": "no",
-"hasWhiteboard": "yes",
-"hasOpenWindows": "no"
+"hasBeamer": true,
+"hasWhiteboard": true,
+"hasOpenWindows": false
 },
 {
 "roomnumber": "H4318",
-"hasBeamer": "yes",
-"hasWhiteboard": "no",
-"hasOpenWindows": "yes"
+"hasBeamer": true,
+"hasWhiteboard": false,
+"hasOpenWindows": true
 }]

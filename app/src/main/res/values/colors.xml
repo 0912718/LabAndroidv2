@@ -7,6 +7,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="transparent">#00000000</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="hrRood">#c90033</color>
 
     <!-- Material Design Color - Color palette -->
 

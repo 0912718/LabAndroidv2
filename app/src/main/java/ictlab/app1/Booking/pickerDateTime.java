@@ -1,5 +1,6 @@
-package ictlab.app1;
+package ictlab.app1.Booking;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -16,14 +17,41 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
-import java.util.Calendar;
+import org.json.JSONArray;
 
-public class newBookingClass extends AppCompatActivity implements View.OnClickListener
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+
+import ictlab.app1.R;
+
+// http://rdcworld-android.blogspot.nl/2013/01/listview-with-checkbox-using.html
+                                // https://developer.android.com/guide/topics/ui/controls/checkbox.html
+                                // https://stackoverflow.com/questions/31791101/working-with-checkbox-in-listview-and-filterable-on-android
+
+
+public class pickerDateTime extends AppCompatActivity implements View.OnClickListener
 {
     Button btnDatePicker, btnTimePicker, submitSearch;
     EditText txtDate, txtTime;
     private int mYear, mMonth, mDay, mHour, mMinute;
     CheckBox cBeamer, cWhiteboard, cWindows;
+//    //url to get json
+//    private static String url = "rooms.json";
+//
+//    //json node names
+//    private static final String TAG_rooms = "roomnumber";
+//    private static final String TAG_hasBeamer = "hasBeamer";
+//    private static final String TAG_hasWhiteboard = "hasWhiteboard";
+//    private static final String TAG_hasWindows = "hasOpenWindows";
+//
+//    JSONArray rooms = null;
+//
+//    ArrayList<HashMap<String, String>> roomList;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +65,16 @@ public class newBookingClass extends AppCompatActivity implements View.OnClickLi
 
         submitSearch = findViewById(R.id.search);
 
-        cBeamer = findViewById(R.id.checkBeamer);
-        cWhiteboard = findViewById(R.id.checkWhiteboard);
-        cWindows = findViewById(R.id.checkWindows);
+//        cBeamer = findViewById(R.id.checkBeamer);
+//        cWhiteboard = findViewById(R.id.checkWhiteboard);
+//        cWindows = findViewById(R.id.checkWindows);
 
         btnDatePicker.setOnClickListener(this);
         btnTimePicker.setOnClickListener(this);
         submitSearch.setOnClickListener(this);
+
+      //  roomList = new ArrayList<HashMap<String, String>>();
+
 
 
     }
@@ -94,13 +125,37 @@ public class newBookingClass extends AppCompatActivity implements View.OnClickLi
             timePickerDialog.show();
         }
         if(v == submitSearch){
-            if (cBeamer.isChecked() && cWhiteboard.isChecked() && cWindows.isChecked()) {
-                System.out.println("check1");
-            } if (!cBeamer.isChecked() && cWhiteboard.isChecked() && cWindows.isChecked()) {
-                System.out.println("check2");
-            }
+            // TODO only show rooms for availability.
+            //https://github.com/square/moshi
+
         }
     }
+//    public void oncCheckBoxClicked(View view){
+//        boolean checked = ((CheckBox) view).isChecked();
+//
+//        switch(view.getId()){
+//            case R.id.checkBeamer:
+//                if(checked)
+//                    //if checkbox is clicked, then beamer in json is yes, only show rooms with beamer
+//                    ;
+//                else
+//                    ;
+//                break;
+//            case R.id.checkWhiteboard:
+//                if(checked)
+//                    ;
+//                else
+//                    ;
+//                break;
+//            case R.id.checkWindows:
+//                if(checked)
+//                    ;
+//                else
+//                    ;
+//                break;
+//                }
+//        }
+//    }
 
 }
 //https://github.com/geronald10/GomesStudioReservation/blob/master/app/src/main/java/gomes/com/gomesstudioreservation/BookingActivity.java

@@ -1,0 +1,9 @@
+<Framelayout
+    android:background="#e3e3e3"
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".Booking.chooseRoomH4"
+    tools:ignore="MergeRootFrame"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" />

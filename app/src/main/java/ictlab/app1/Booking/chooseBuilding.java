@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import ictlab.app1.MaterialViewPagerTest.fragment.MainActivity;
+import ictlab.app1.ListTest.ListTestActivity;
 import ictlab.app1.R;
 
 public class chooseBuilding extends AppCompatActivity {
@@ -58,7 +58,7 @@ public class chooseBuilding extends AppCompatActivity {
                 if(expandableListDetail.get(
                         expandableListTitle.get(groupPosition)).get(
                         childPosition) == "1st floor"){
-                    Intent intent = new Intent(chooseBuilding.this, MainActivity.class);
+                    Intent intent = new Intent(chooseBuilding.this, ListTestActivity.class);
                     startActivity(intent);
                 }
                 if(expandableListDetail.get(
@@ -76,7 +76,7 @@ public class chooseBuilding extends AppCompatActivity {
                 if(expandableListDetail.get(
                         expandableListTitle.get(groupPosition)).get(
                         childPosition) == "4th floor"){
-                    Intent intent = new Intent(chooseBuilding.this, chooseRoomH4.class);
+                    Intent intent = new Intent(chooseBuilding.this, ListTestActivity.class);
                     startActivity(intent);
                 }
                 if(expandableListDetail.get(
@@ -86,14 +86,7 @@ public class chooseBuilding extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-//                Toast.makeText(
-//                        getApplicationContext(),
-//                        expandableListTitle.get(groupPosition)
-//                                + " -> "
-//                                + expandableListDetail.get(
-//                                expandableListTitle.get(groupPosition)).get(
-//                                childPosition), Toast.LENGTH_SHORT
-//                ).show();
+
                 return false;
             }
         });

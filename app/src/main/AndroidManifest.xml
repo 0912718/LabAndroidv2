@@ -31,7 +31,8 @@
         <activity android:name=".Booking.pickerDateTime"/>
         <activity android:name=".Booking.chooseBuilding"/>
         <activity android:name=".Booking.chooseRoomH4" />
-        <activity android:name=".MaterialViewPagerTest.fragment.MainActivity" />
+        <activity android:name=".qrCodeClass" />
+        <activity android:name=".ListTest.ListTestActivity" />
 
     </application>
 

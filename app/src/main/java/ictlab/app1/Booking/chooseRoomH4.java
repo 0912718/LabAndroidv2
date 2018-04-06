@@ -16,10 +16,6 @@ public class chooseRoomH4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chooseroomh4_layout);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, CardViewFragment.newInstance())
-                    .commit();
-        }
+
     }
 }

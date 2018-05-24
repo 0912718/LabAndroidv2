@@ -50,6 +50,7 @@ dependencies {
     compile 'com.jpardogo.materialtabstrip:library:1.1.0'
     compile 'com.github.bumptech.glide:glide:4.0.0'
     compile 'com.github.dexafree:materiallist:3.2.1'
+    compile 'com.android.volley:volley:1.1.0'
 
 //json
     compile 'com.squareup.retrofit2:retrofit:2.1.0'

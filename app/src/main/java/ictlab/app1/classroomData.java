@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by edgar on 4-3-2018.
+ * Created by Pellito on 18-5-2018.
  */
 
-public class reservationClass extends Activity {
+public class classroomData extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reservations);
+        setContentView(R.layout.help);
     }
 }

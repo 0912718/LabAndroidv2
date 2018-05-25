@@ -2,7 +2,6 @@ package ictlab.app1.Booking;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.daimajia.androidviewhover.BlurLayout;
 
 import ictlab.app1.R;
 

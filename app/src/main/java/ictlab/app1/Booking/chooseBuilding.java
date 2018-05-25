@@ -64,13 +64,13 @@ public class chooseBuilding extends AppCompatActivity {
                 if(expandableListDetail.get(
                         expandableListTitle.get(groupPosition)).get(
                         childPosition) == "2nd floor"){
-                    Intent intent = new Intent(chooseBuilding.this, pickerDateTime.class);
+                    Intent intent = new Intent(chooseBuilding.this, ListTestActivity.class);
                     startActivity(intent);
                 }
                 if(expandableListDetail.get(
                         expandableListTitle.get(groupPosition)).get(
                         childPosition) == "3rd floor"){
-                    Intent intent = new Intent(chooseBuilding.this, pickerDateTime.class);
+                    Intent intent = new Intent(chooseBuilding.this, ListTestActivity.class);
                     startActivity(intent);
                 }
                 if(expandableListDetail.get(

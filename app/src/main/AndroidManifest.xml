@@ -32,6 +32,11 @@
         <activity android:name=".Booking.chooseBuilding"/>
         <activity android:name=".Booking.chooseRoomH4" />
         <activity android:name=".qrCodeClass" />
+        <activity android:name=".settingsClass" />
+        <activity android:name=".notificationClass" />
+        <activity android:name=".reservationClass" />
+        <activity android:name=".helpClass" />
+        <activity android:name=".classroomData" />
         <activity android:name=".ListTest.ListTestActivity" />
 
     </application>

@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.GridLayout;
 
+import ictlab.app1.Booking.JsonMainActivity;
 import ictlab.app1.R;
-import ictlab.app1.Booking.chooseBuilding;
 import ictlab.app1.qrCodeClass;
 import ictlab.app1.reservationClass;
 import ictlab.app1.settingsClass;
@@ -24,13 +24,10 @@ public class afterLoginSuccess extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_afterloginsuccess);
-
         mainGrid = findViewById(R.id.mainGrid);
-
     }
-
     public void bookingCardClick(View view){
-        Intent myIntent = new Intent(afterLoginSuccess.this, chooseBuilding.class);
+        Intent myIntent = new Intent(afterLoginSuccess.this, JsonMainActivity.class);
         afterLoginSuccess.this.startActivity(myIntent);
     }
     public void qrCardClick(View view){

@@ -1,11 +1,8 @@
 package ictlab.app1;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,7 +12,6 @@ import com.android.volley.RequestQueue;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.zxing.Result;
@@ -68,7 +64,7 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
     }
 
     public void que(String id) {
-        final TextView textViewToChange = (TextView) findViewById(R.id.classroom_data);
+        final TextView textViewToChange = findViewById(R.id.classroom_data);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="http://145.24.222.187:3000/classrooms/"+ id +".json";

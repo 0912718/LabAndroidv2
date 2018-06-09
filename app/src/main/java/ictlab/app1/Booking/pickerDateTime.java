@@ -1,121 +1,55 @@
 package ictlab.app1.Booking;
 
-
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 /**
  * Created by edgar on 14-3-2018.
  */
 import android.app.DatePickerDialog;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TimePicker;
+import android.widget.NumberPicker;
 import android.widget.Toast;
-
-import java.io.IOException;
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
-import ictlab.app1.ListTest.RoomList;
 import ictlab.app1.R;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-
-// http://rdcworld-android.blogspot.nl/2013/01/listview-with-checkbox-using.html
-                                // https://developer.android.com/guide/topics/ui/controls/checkbox.html
-                                // https://stackoverflow.com/questions/31791101/working-with-checkbox-in-listview-and-filterable-on-android
 
 
 public class pickerDateTime extends AppCompatActivity implements View.OnClickListener {
-    Button btnDatePicker, btnTimePicker, submitSearch;
-    EditText txtDate, txtTime;
-    public int mYear, mMonth, mDay, mHour, mMinute;
-    public int begintime_id, endtime_id, classroom_id, from, to;
-    public String date_id;
-    public String title, description;
-    RoomList roomList;
-    //String url = "http://192.168.0.101:3000/reservations.json";
-   // String url = "http://127.0.0.1:3000/reservations.json";
+    Button  submitSearch, btnDescription, btnTitle;
+    EditText txtDate;
+    public int mYear, mMonth, mDay;
+    public String date_id, gebouwnaam, klasnaam, title, description, endtime, begintime;
+    private String m_Text = "";
+    private String m_TextDes = "";
 
 
-    // private RequestQueue queue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.datetimepicker_layout);
-
-        btnDatePicker = findViewById(R.id.btn_date);
-        btnTimePicker = findViewById(R.id.btn_time);
+        btnDescription = findViewById(R.id.btnDescription);
+        btnTitle = findViewById(R.id.btnTitle);
         txtDate = findViewById(R.id.in_date);
-        txtTime = findViewById(R.id.in_time);
         submitSearch = findViewById(R.id.submitSearch);
-        btnDatePicker.setOnClickListener(this);
-        btnTimePicker.setOnClickListener(this);
         submitSearch.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-
-            case R.id.btn_date:
-
-                datePicker();
-
-                break;
-            case R.id.btn_time:
-//
-//                // Get Current Time
-//                final Calendar ca = Calendar.getInstance();
-//                mHour = ca.get(Calendar.HOUR_OF_DAY);
-//                mMinute = ca.get(Calendar.MINUTE);
-//
-//                // Launch Time Picker Dialog
-//                TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-//                        new TimePickerDialog.OnTimeSetListener() {
-//
-//                            @Override
-//                            public void onTimeSet(TimePickerDialog view, int hourOfDay,
-//                                                  int minute) {
-//
-//                                txtTime.setText(hourOfDay + ":" + minute);
-//                            }
-//                        }, mHour, mMinute, true);
-//                timePickerDialog.show();
-//                break;
-            case R.id.submitSearch:
-                JsonPost post = new JsonPost();
-                post.sendData();
-                Toast.makeText(pickerDateTime.this,
-                        "Post sended, check webapp for reservation", Toast.LENGTH_LONG).show();
-
-        }
-
-    }
-//    public void setDate(final Calendar calendar){
-//        final DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
-//        txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-//
-//    }
-
-
-    public void datePicker(){
+        btnDescription.setOnClickListener(this);
+        btnTitle.setOnClickListener(this);
+        Intent intent = getIntent();
+        gebouwnaam = intent.getStringExtra("name");
+        klasnaam = intent.getStringExtra("classroom");
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
-
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
-
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
@@ -125,10 +59,85 @@ public class pickerDateTime extends AppCompatActivity implements View.OnClickLis
                         System.out.println(date_id);
                     }
                 }, mYear, mMonth, mDay);
-
         datePickerDialog.show();
+        final NumberPicker np = findViewById(R.id.np);
+        final NumberPicker np1 = findViewById(R.id.np1);
+        np1.setMinValue(1);
+        np1.setMaxValue(15);
+        np.setMinValue(1);
+        np.setMaxValue(15);
+        np.getDisplayedValues();
+        np.setWrapSelectorWheel(true);
+        np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                np1.setMinValue(np.getValue() + 1);
+                begintime = String.valueOf(np.getValue());
+                System.out.println(begintime);
+            }
+        });
+        np1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                endtime = String.valueOf(np1.getValue());
+                System.out.println(endtime);
+            }
+        });
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnTitle:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Please enter you studentnumber");
+                final EditText input = new EditText(this);
+                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_CLASS_NUMBER);
+                builder.setView(input);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+                break;
+            case R.id.btnDescription:
+                AlertDialog.Builder builderDes = new AlertDialog.Builder(this);
+                builderDes.setTitle("Please enter reason you are booking, i.e. ICT-lab meeting");
+                final EditText inputDes = new EditText(this);
+                inputDes.setInputType(InputType.TYPE_CLASS_TEXT );
+                builderDes.setView(inputDes);
+                builderDes.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_TextDes = inputDes.getText().toString();
+                    }
+                });
+                builderDes.show();
+                break;
+            case R.id.submitSearch:
+                if(m_Text.isEmpty() || m_TextDes.isEmpty()) {
+                    Toast.makeText(pickerDateTime.this,
+                            "Please enter studentnumber and description", Toast.LENGTH_LONG).show();
+                } else {
+                    JsonPost post = new JsonPost();
+                    post.sendData(date_id, m_Text, m_TextDes, begintime, endtime, klasnaam);
+                    System.out.println(post.toString());
+                    Toast.makeText(pickerDateTime.this,
+                            "Post sended, check webapp for reservation", Toast.LENGTH_LONG).show();
+                }
+        }
 
     }
 }
+
+
+
 
 

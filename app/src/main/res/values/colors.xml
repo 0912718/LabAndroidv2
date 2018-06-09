@@ -9,7 +9,11 @@
     <color name="transparent">#00000000</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="hrRood">#c90033</color>
-
+    <color name="list_divider">#e69797</color>
+    <color name="list_row_start_color">#c4babd</color>
+    <color name="list_row_end_color">#c90033</color>
+    <color name="list_row_hover_start_color">#c4babd</color>
+    <color name="list_row_hover_end_color">#c4babd</color>
     <!-- Material Design Color - Color palette -->
 
 

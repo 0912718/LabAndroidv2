@@ -1,35 +1,5 @@
 <resources>
-    <string name="app_name">AndroidTestUI</string>
-
-    <!-- Strings related to Main -->
-
-    <!-- Strings related to Scrolling -->
-
-    <!-- Strings related to Fullscreen -->
-
-    <!-- String related to RecyclerView -->
-
-    <!-- String related to Login -->
-
-    <string name="selected_time">The time you picked will be shown here.</string>
-    <string name="selected_date">The date you picked will be shown here.</string>
-    <string name="pick_time">Pick Time</string>
-    <string name="pick_date">Pick Date</string>
-    <string name="original_button">Framework Picker</string>
-    <string name="mode_24_hours">Use 24 hour mode</string>
-    <string name="mode_dark">Use dark theme</string>
-    <string name="mode_custom_accent">Use custom accent</string>
-    <string name="vibrate">Vibrate on touch</string>
-    <string name="dismiss">Dismiss on pause (eg: orientation change)</string>
-    <string name="title">Show a title</string>
-    <string name="show_version_2">Use marshmallow layout</string>
-    <string name="show_year_first">Show the year picker first</string>
-    <string name="enable_seconds">Show seconds picker</string>
-    <string name="limit_times">Limit selectable times</string>
-    <string name="limit_dates">Limit selectable dates</string>
-    <string name="disable_times">Disable specific times</string>
-    <string name="highlight_dates">Highlight certain dates</string>
-    <string name="switch_orientation">Switch scroll orientation</string>
+    <string name="app_name">ICT-lab 2018</string>
 
     <string name="ok">OK</string>
 
@@ -38,8 +8,6 @@
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission. The application will now exit.</string>
 
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-
-
     <string name="barcode_header">Click "Read Barcode" to read a barcode</string>
 
     <string name="read_barcode">Read Barcode</string>
@@ -54,12 +22,9 @@
 
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
 
-
     <string name="tab_title_time">Time</string>
     <string name="tab_title_date">Date</string>
     <string name="title_activity_main">MainActivity</string>
-
-
 
         <string name="title_1">Cool card</string>
         <string name="title_2">Ok card</string>
@@ -67,8 +32,5 @@
         <string name="title_4">Ugly card</string>
 
         <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

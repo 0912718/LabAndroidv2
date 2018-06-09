@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import ictlab.app1.Main.afterLoginSuccess;
 
 /**
  * Created by edgar on 24-2-2018.

@@ -13,16 +13,13 @@ import okhttp3.Response;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
-
+// controls the login and post for the json
 public class JsonPost extends Activity{
     public String accessToken;
     public String clientToken;
     public String uid;
     public String url = "http://192.168.0.101:3000"; //TODO
     public Response response;
-
-
-
 
     public boolean login(String email, String password) {
         Response response = null;

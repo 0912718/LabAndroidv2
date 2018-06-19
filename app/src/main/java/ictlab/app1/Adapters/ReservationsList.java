@@ -1,5 +1,5 @@
 package ictlab.app1.Adapters;
-
+//data model adapter for reservations
 public class ReservationsList {
     private String id, classroom_id, date, title, description, from_block, to_block, classroom_name;
 

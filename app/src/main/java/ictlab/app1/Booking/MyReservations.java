@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +15,11 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+//shows the reservation and converts the timeblocks into times
+
 public class MyReservations extends AppCompatActivity {
     public String id, name, accessToken, clientToken, uid, date, title, description, from, to;
     public TextView classroomnaam, classroomdatum, classroomTitel, classroomDescription, classroomFrom, classroomTo;
-    Button deletebutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

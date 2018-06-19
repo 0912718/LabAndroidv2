@@ -15,7 +15,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
@@ -25,9 +24,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import ictlab.app1.Adapters.BuildingList;
-import ictlab.app1.Adapters.ListViewAdapter;
 import ictlab.app1.Adapters.ReservationsAdapter;
 import ictlab.app1.Adapters.ReservationsList;
 import ictlab.app1.R;
@@ -35,6 +31,7 @@ import ictlab.app1.R;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
+//gives a list of classrooms from a json on the server. when adding new classroom, no refactoring is needed!!!
 
 public class chooseClassroom extends AppCompatActivity {
     public TextView textView;
@@ -43,7 +40,7 @@ public class chooseClassroom extends AppCompatActivity {
     private ReservationsAdapter adapter;
     private ListView listView;
     public String url = "http://192.168.0.101"; // "http://192.168.2.6"; TODO ENTER IP ADDRESS
-    public String buildingString,accessToken, clientToken, uid, classroomId;
+    public String buildingString,accessToken, clientToken, uid;
     RequestQueue requestQueue;
 
 

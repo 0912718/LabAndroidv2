@@ -15,7 +15,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -29,14 +28,13 @@ import java.util.Map;
 
 import ictlab.app1.Adapters.BuildingList;
 import ictlab.app1.Adapters.ListViewAdapter;
-import ictlab.app1.Adapters.ReservationsAdapter;
-import ictlab.app1.Adapters.ReservationsList;
 import ictlab.app1.R;
 
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
 
+//gives a list of buildings. No refactor needed when adding a new building!!!
 public class ChooseBuilding extends AppCompatActivity {
     public TextView textView;
     public String buildings_url = "http://192.168.0.101:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
@@ -45,7 +43,7 @@ public class ChooseBuilding extends AppCompatActivity {
     private List<BuildingList> buildingListList = new ArrayList<>();
     private ListViewAdapter adapter;
     private ListView listView;
-    public String accessToken, clientToken, uid, building_id;
+    public String accessToken, clientToken, uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +76,7 @@ public class ChooseBuilding extends AppCompatActivity {
                                 JSONArray array = response.getJSONArray("buildings");
                                 for (int i = 0; i < array.length(); i++) {
                                     JSONObject obj = array.getJSONObject(i);
-                                //JSONArray jsonArray = obj.getJSONArray("buildings");
-                               // String classroom = obj.getString("classrooms");
                                 BuildingList buildingList = new BuildingList();
-                                //final JSONObject building = obj.getJSONObject("classrooms");
                                 buildingList.setBuilding_name(obj.getString("name"));
                                 buildingList.setBuilding_id(obj.getString("id"));
                                 buildingListList.add(buildingList);

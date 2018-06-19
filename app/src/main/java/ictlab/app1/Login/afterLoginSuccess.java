@@ -15,7 +15,7 @@ import ictlab.app1.SettingsPage.settingsClass;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
-
+//shows the menu after login
 public class afterLoginSuccess extends AppCompatActivity {
 
     GridLayout mainGrid;

@@ -32,12 +32,11 @@ import ictlab.app1.Adapters.ReservationsAdapter;
 import ictlab.app1.Adapters.ReservationsList;
 import ictlab.app1.R;
 
-
+//shows current made reservations and could delete them, no refactoring needed on change
 public class reservationClass extends Activity {
   //  public TextView textView;
     RequestQueue requestQueue;
     private ProgressDialog progressDialog;
-    private ListViewAdapter adapter;
     private ReservationsAdapter reservationsAdapter;
     private ListView listView;
     public String accessToken, clientToken, uid;
@@ -49,7 +48,6 @@ public class reservationClass extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jsonmainactivity_list);
         requestQueue = Volley.newRequestQueue(this);
-        //textView = findViewById(R.id.name);
         listView = findViewById(R.id.list);
         reservationsAdapter = new ReservationsAdapter(this, reservationsListList);
         listView.setAdapter(reservationsAdapter);
@@ -68,15 +66,11 @@ public class reservationClass extends Activity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // System.out.println(response.toString());
                         try {
                             JSONArray array = response.getJSONArray("reservations");
                                 for (int i = 0; i < array.length(); i++) {
                                     JSONObject objectRequest = array.getJSONObject(i);
-                                //JSONArray jsonArray = obj.getJSONArray("buildings");
-                                // String classroom = obj.getString("classrooms");
                                 ReservationsList reservationsList = new ReservationsList();
-                                //final JSONObject building = obj.getJSONObject("classrooms");
                                 reservationsList.setId(objectRequest.getString("id"));
                                 reservationsList.setClassroom_id(objectRequest.getString("classroom_id"));
                                 reservationsList.setClassroom_name(objectRequest.getString("classroom_name"));
@@ -102,7 +96,6 @@ public class reservationClass extends Activity {
                                         i.putExtra("accessToken", accessToken);
                                         i.putExtra("uid", uid);
                                           startActivity(i);
-                                        // System.out.println("Test " + b.getBuilding_name());
                                     }
                                 });
                             }

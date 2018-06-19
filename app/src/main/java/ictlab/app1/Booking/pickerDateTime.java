@@ -13,9 +13,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
-
-import com.google.api.client.json.Json;
-
 import java.util.Calendar;
 
 import ictlab.app1.R;
@@ -23,6 +20,7 @@ import ictlab.app1.R;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
+//shows date picker dialog and time picker in blocks
 
 public class pickerDateTime extends AppCompatActivity implements View.OnClickListener {
     Button  submitSearch, btnDescription;
@@ -137,10 +135,6 @@ public class pickerDateTime extends AppCompatActivity implements View.OnClickLis
                             }else{
                                 Toast.makeText(pickerDateTime.this, "Reservation failed, please choose another date and/or time", Toast.LENGTH_LONG).show();
                             }
-                            //System.out.println(post.toString());
-
-//                            Toast.makeText(pickerDateTime.class,
-//                                    "Post sended, check webapp for reservation", Toast.LENGTH_LONG).show();
                 }
         }
 

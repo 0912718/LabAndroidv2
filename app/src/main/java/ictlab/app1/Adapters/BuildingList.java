@@ -3,7 +3,7 @@ package ictlab.app1.Adapters;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
-
+//data model adapter for the buildings
 public class BuildingList {
     private String building_name;
     private String classroom;

@@ -1,47 +1,26 @@
 package ictlab.app1;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.hardware.Camera;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-
 import com.android.volley.RequestQueue;
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.zxing.Result;
-
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import ictlab.app1.Booking.pickerDateTime;
 import ictlab.app1.Login.afterLoginSuccess;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
-import static java.security.AccessController.getContext;
 
 
 public class qrCodeClass extends Activity implements ZXingScannerView.ResultHandler{
@@ -61,7 +40,6 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
         accessToken= intent.getStringExtra("accessToken");
         clientToken = intent.getStringExtra("clientToken");
         uid = intent.getStringExtra("uid");
-
     }
     public void QRcodeReservation(View view){
         Intent intent = new Intent(qrCodeClass.this, pickerDateTime.class);
@@ -70,7 +48,6 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
         intent.putExtra("uid", uid);
         intent.putExtra("id", lokaalid);
         qrCodeClass.this.startActivity(intent);
-
     }
 
 
@@ -78,7 +55,7 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
     @Override
     public void handleResult(Result result) {
         setContentView(R.layout.classroomdata);
-        final TextView textViewToChange = (TextView) findViewById(R.id.text3);
+        final TextView textViewToChange = findViewById(R.id.text3);
         textViewToChange.setText(result.getText());
         que(result.getText());
     }
@@ -90,11 +67,9 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
 
     public void que(String id) {
         final TextView textViewToChange = findViewById(R.id.classroom_data);
-
         RequestQueue queue = Volley.newRequestQueue(this);
         String url =id+".json";
         System.out.println(url);
-
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url,null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -109,7 +84,6 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -128,7 +102,6 @@ public class qrCodeClass extends Activity implements ZXingScannerView.ResultHand
             }
         };
         queue.add(arrayRequest);
-
     }
 
 }

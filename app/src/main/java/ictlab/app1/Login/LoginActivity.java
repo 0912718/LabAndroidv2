@@ -16,7 +16,7 @@ import ictlab.app1.R;
 /**
  * This whole code underneath is coded by Edgar Buyten - 0912718
  */
-
+//login
 public class LoginActivity extends AppCompatActivity {
     public EditText email, password;
     JsonPost post = new JsonPost();

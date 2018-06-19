@@ -15,26 +15,26 @@ import ictlab.app1.R;
  * This whole code underneath this line is coded by Edgar Buyten - 0912718
  */
 
-public class ListViewAdapter extends BaseAdapter {
+public class ReservationsAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater layoutInflater;
-    private List<BuildingList> buildingLists;
+    private List<ReservationsList> reservationsLists;
 
 
-    public ListViewAdapter(Activity activity, List<BuildingList> buildingLists) {
+    public ReservationsAdapter(Activity activity, List<ReservationsList> reservationsLists) {
         this.activity = activity;
-       this.buildingLists = buildingLists;
+        this.reservationsLists = reservationsLists;
     }
 
     @Override
     public int getCount() {
-        return buildingLists.size();
+        return reservationsLists.size();
     }
 
 
     @Override
     public Object getItem(int location) {
-        return buildingLists.get(location);
+        return reservationsLists.get(location);
     }
 
     @Override
@@ -48,16 +48,13 @@ public class ListViewAdapter extends BaseAdapter {
         if (layoutInflater == null){
             layoutInflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
+        }
         if (convertView == null){
             convertView = layoutInflater.inflate(R.layout.list_row, null);}
 
-            TextView gebouwnaam = convertView.findViewById(R.id.name);
-            TextView klasnaam = convertView.findViewById(R.id.klas);
-          //  TextView reserveringen = convertView.findViewById(R.id.reserveringen);
-            BuildingList b = buildingLists.get(position);
-            gebouwnaam.setText(b.getBuilding_name());
-            klasnaam.setText(b.getClassroom());
+        TextView date = convertView.findViewById(R.id.reserveringid);
+        ReservationsList r = reservationsLists.get(position);
+        date.setText(r.getDate() + " " + r.getTitle());
 
 
         return convertView;

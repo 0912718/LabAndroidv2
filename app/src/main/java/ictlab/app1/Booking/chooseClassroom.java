@@ -39,9 +39,10 @@ public class chooseClassroom extends AppCompatActivity {
     private List<BuildingList> buildingListList = new ArrayList<>();
     private ListViewAdapter adapter;
     private ListView listView;
-    public String url = "http://192.168.0.101"; // "http://192.168.2.6"; TODO ENTER IP ADDRESS
-    public String buildingString,accessToken, clientToken, uid;
+    public String url = "http://145.24.222.187"; // "http://192.168.2.6"; TODO ENTER IP ADDRESS
+    public String buildingString,accessToken, clientToken, uid, classroomId;
     RequestQueue requestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +57,18 @@ public class chooseClassroom extends AppCompatActivity {
         progressDialog.setMessage("Loading... ");
 
         Intent intent = getIntent();
+        String building_id = intent.getStringExtra("id");
         String buildingClick= intent.getStringExtra("name");
         accessToken= intent.getStringExtra("accessToken");
         clientToken = intent.getStringExtra("clientToken");
         uid = intent.getStringExtra("uid");
         buildingString = buildingClick;
         System.out.println("chooseCLASSROOM " + buildingClick);
-        if(buildingClick.contains("Wijnhaven")){
-            url = url + ":3000/buildings/1.json";
-            getClassroomsJSON();
-        } if(buildingClick.contains("Kralingse zoom")){
-            url = url + ":3000/buildings/2.json";
-            getClassroomsJSON();}
+
+        url = url + ":3000/buildings/" + building_id+ ".json";
+        getClassroomsJSON();
+        System.out.println(url);
+
     }
 
     public void getClassroomsJSON() {
@@ -86,6 +87,8 @@ public class chooseClassroom extends AppCompatActivity {
                                 final BuildingList classroomList = new BuildingList();
 
                                 classroomList.setClassroom(classroom.getString("name"));
+                                classroomList.setClassroom_id(classroom.getString("id"));
+
                                 buildingListList.add(classroomList);
                                 System.out.println(classroomList.toString());
 
@@ -94,13 +97,14 @@ public class chooseClassroom extends AppCompatActivity {
                                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                                         BuildingList c = (BuildingList) adapter.getItem(position);
                                         Intent i = new Intent(chooseClassroom.this, pickerDateTime.class);
+                                        i.putExtra("id", c.getClassroom_id());
                                         i.putExtra("name", buildingString);
                                         i.putExtra("classroom", c.getClassroom());
                                         i.putExtra("clientToken", clientToken);
                                         i.putExtra("accessToken", accessToken);
                                         i.putExtra("uid", uid);
                                         startActivity(i);
-                                        System.out.println("Test " + c.getClassroom());
+                                        System.out.println("Test " + c.getClassroom() + " Test " + c.getClassroom_id());
                                     }
                                 });
                                 }
@@ -119,7 +123,7 @@ public class chooseClassroom extends AppCompatActivity {
                 }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("Content-Type", "application/json");
                 params.put("access-token", accessToken);
                 params.put("client", clientToken);

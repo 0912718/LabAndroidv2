@@ -9,7 +9,7 @@ import android.widget.GridLayout;
 import ictlab.app1.Booking.ChooseBuilding;
 import ictlab.app1.R;
 import ictlab.app1.qrCodeClass;
-import ictlab.app1.reservationClass;
+import ictlab.app1.Booking.reservationClass;
 import ictlab.app1.SettingsPage.settingsClass;
 
 /**

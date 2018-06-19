@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,6 +29,8 @@ import java.util.Map;
 
 import ictlab.app1.Adapters.BuildingList;
 import ictlab.app1.Adapters.ListViewAdapter;
+import ictlab.app1.Adapters.ReservationsAdapter;
+import ictlab.app1.Adapters.ReservationsList;
 import ictlab.app1.R;
 
 /**
@@ -36,13 +39,13 @@ import ictlab.app1.R;
 
 public class ChooseBuilding extends AppCompatActivity {
     public TextView textView;
-    public String buildings_url = "http://192.168.0.101:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
+    public String buildings_url = "http://145.24.222.187:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
     RequestQueue requestQueue;
     private ProgressDialog progressDialog;
     private List<BuildingList> buildingListList = new ArrayList<>();
     private ListViewAdapter adapter;
     private ListView listView;
-    public String accessToken, clientToken, uid;
+    public String accessToken, clientToken, uid, building_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,7 @@ public class ChooseBuilding extends AppCompatActivity {
                                 BuildingList buildingList = new BuildingList();
                                 //final JSONObject building = obj.getJSONObject("classrooms");
                                 buildingList.setBuilding_name(obj.getString("name"));
+                                buildingList.setBuilding_id(obj.getString("id"));
                                 buildingListList.add(buildingList);
                                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
@@ -87,6 +91,7 @@ public class ChooseBuilding extends AppCompatActivity {
                                         BuildingList b = (BuildingList) adapter.getItem(position);
                                         Intent i = new Intent(ChooseBuilding.this, chooseClassroom.class);
                                         i.putExtra("name",  b.getBuilding_name());
+                                        i.putExtra("id", b.getBuilding_id());
                                         i.putExtra("clientToken", clientToken);
                                         i.putExtra("accessToken", accessToken);
                                         i.putExtra("uid", uid);
@@ -122,6 +127,69 @@ public class ChooseBuilding extends AppCompatActivity {
             }};
         requestQueue.add(obreq);
     }
+//    public void getMyReservations() {
+//        JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, myresURL, null,
+//                new Response.Listener<JSONArray>() {
+//                    @Override
+//                    public void onResponse(JSONArray response) {
+//                       // System.out.println(response.toString());
+//                            for (int i = 0; i < response.length(); i++) {
+//                                try {
+//                                JSONObject objectRequest = response.getJSONObject(i);
+//                                //JSONArray jsonArray = obj.getJSONArray("buildings");
+//                                // String classroom = obj.getString("classrooms");
+//                                ReservationsList reservationsList = new ReservationsList();
+//                                //final JSONObject building = obj.getJSONObject("classrooms");
+//                                reservationsList.setId(objectRequest.getString("id"));
+//                                reservationsList.setClassroom_id(objectRequest.getString("classroom_id"));
+//                                reservationsList.setDate(objectRequest.getString("date"));
+//                                reservationsList.setTitle(objectRequest.getString("title"));
+//                                reservationsList.setDescription(objectRequest.getString("description"));
+//                                reservationsList.setFrom_block(objectRequest.getString("from_block"));
+//                                reservationsList.setTo_block(objectRequest.getString("to_block"));
+//                                reservationsListList.add(reservationsList);
+//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                                    @Override
+//                                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//                                        ReservationsList r = (ReservationsList) reservationsAdapter.getItem(position);
+//
+////                                        Intent i = new Intent(ChooseBuilding.this, chooseClassroom.class);
+////                                        i.putExtra("name", b.getBuilding_name());
+////                                        i.putExtra("clientToken", clientToken);
+////                                        i.putExtra("accessToken", accessToken);
+////                                        i.putExtra("uid", uid);
+//                                        //  startActivity(i);
+//                                        // System.out.println("Test " + b.getBuilding_name());
+//                                    }
+//                                });
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        reservationsAdapter.notifyDataSetChanged();
+//
+//                    }
+//
+//                },
+//                new com.android.volley.Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Log.e("Volley", error.toString());
+//                    }
+//                }
+//        ) {
+//            @Override
+//            public Map<String, String> getHeaders() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//                params.put("Content-Type", "application/json");
+//                params.put("access-token", accessToken);
+//                params.put("client", clientToken);
+//                params.put("uid", uid);
+//                return params;
+//            }
+//        };
+//        requestQueue.add(arrayRequest );
+//    }
 }
 
 

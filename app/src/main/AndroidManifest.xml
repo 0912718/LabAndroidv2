@@ -34,11 +34,13 @@
         <activity android:name=".qrCodeClass" />
         <activity android:name=".SettingsPage.settingsClass" />
         <activity android:name=".SettingsPage.notificationClass" />
-        <activity android:name=".reservationClass" />
+        <activity android:name=".Booking.reservationClass" />
         <activity android:name=".SettingsPage.helpClass" />
         <activity android:name=".SettingsPage.classroomData" />
         <activity android:name=".Booking.ChooseBuilding" />
         <activity android:name=".Booking.chooseClassroom" />
+        <activity android:name=".Booking.MyReservations" />
+        <activity android:name=".Booking.JsonPost" />
 
     </application>
 

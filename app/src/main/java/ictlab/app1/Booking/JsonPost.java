@@ -18,7 +18,7 @@ public class JsonPost extends Activity{
     public String accessToken;
     public String clientToken;
     public String uid;
-    public String url = "http://192.168.0.101:3000"; //TODO
+    public String url = "http://145.24.222.187:3000"; //TODO
     public Response response;
 
     public boolean login(String email, String password) {
@@ -74,7 +74,7 @@ public class JsonPost extends Activity{
         System.out.println(classroom_id);
         RequestBody body = RequestBody.create(mediaType, "{\n\t\"classroom_id\": " + classroom_id + ",\n\t\"date\": \"" + date_id + "\",\n\t\"title\": \"" + title + "\",\n\t\"description\": \"" + description + "\",\n\t\"from_block\": \"" + from + "\",\n\t\"to_block\": \"" + to + "\"\n}");
         Request request = new Request.Builder()
-                .url("http://192.168.0.101:3000/api/v1/reservations")//("http://192.168.2.6:3000/reservations.json") TODO ENTER IP ADDRESS HERE
+                .url("http://145.24.222.187:3000/api/v1/reservations")//("http://192.168.2.6:3000/reservations.json") TODO ENTER IP ADDRESS HERE
                 .post(body)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Cache-Control", "no-cache")

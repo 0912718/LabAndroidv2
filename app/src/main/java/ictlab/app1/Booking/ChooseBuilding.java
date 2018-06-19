@@ -37,7 +37,7 @@ import ictlab.app1.R;
 //gives a list of buildings. No refactor needed when adding a new building!!!
 public class ChooseBuilding extends AppCompatActivity {
     public TextView textView;
-    public String buildings_url = "http://192.168.0.101:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
+    public String buildings_url = "http://145.24.222.187:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
     RequestQueue requestQueue;
     private ProgressDialog progressDialog;
     private List<BuildingList> buildingListList = new ArrayList<>();

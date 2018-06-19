@@ -39,7 +39,7 @@ public class chooseClassroom extends AppCompatActivity {
     private List<ReservationsList> reservationsListList = new ArrayList<>();
     private ReservationsAdapter adapter;
     private ListView listView;
-    public String url = "http://192.168.0.101"; // "http://192.168.2.6"; TODO ENTER IP ADDRESS
+    public String url = "http://145.24.222.187"; // "http://192.168.2.6"; TODO ENTER IP ADDRESS
     public String buildingString,accessToken, clientToken, uid;
     RequestQueue requestQueue;
 

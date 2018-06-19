@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/new_login_gradients"
-    tools:context="ictlab.app1.Main.afterLoginSuccess"
+    tools:context="ictlab.app1.Login.afterLoginSuccess"
     android:theme="@style/AppTheme.Fullscreen">
 
     <GridLayout
@@ -20,10 +20,6 @@
         android:fadingEdge="horizontal|vertical"
         android:padding="14dp"
         android:rowCount="3">
-
-        <!-- Row 1 -->
-
-        <!-- Column 1 -->
         <android.support.v7.widget.CardView
             android:onClick="bookingCardClick"
             android:layout_width="5dp"
@@ -62,12 +58,9 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp" />
-
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
 
-        <!-- Column 2 -->
         <android.support.v7.widget.CardView
             android:onClick="qrCardClick"
             android:layout_width="0dp"

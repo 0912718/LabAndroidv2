@@ -19,12 +19,9 @@ import com.google.zxing.Result;
 
 import org.json.JSONObject;
 
-import ictlab.app1.Main.afterLoginSuccess;
+import ictlab.app1.Login.afterLoginSuccess;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-/**
- * Created by edgar on 4-3-2018.
- */
 
 public class qrCodeClass extends Activity implements ZXingScannerView.ResultHandler{
 

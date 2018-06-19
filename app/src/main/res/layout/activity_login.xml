@@ -30,7 +30,7 @@
                 android:src="@drawable/logohr"/>
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
@@ -38,8 +38,8 @@
                 android:drawableLeft="@drawable/ic_person_white_24dp"
                 android:drawablePadding="12dp"
                 android:ems="10"
-                android:hint="Studentnumber"
-                android:inputType="number"
+                android:hint="Student email"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:padding="8dp"
                 android:textColorHint="#ffffff" />
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editText2"
+                android:id="@+id/password"
                 android:drawablePadding="12dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"

@@ -1,8 +1,7 @@
 package ictlab.app1.Adapters;
 
-
 /**
- * Created by edgar on 5-4-2018.
+ * This whole code underneath is coded by Edgar Buyten - 0912718
  */
 
 public class BuildingList {

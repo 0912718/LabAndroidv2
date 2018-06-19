@@ -14,19 +14,11 @@
         android:layout_marginTop="110dp" />
 
     <Button
-        android:id="@+id/btnTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/in_date"
-        android:layout_below="@+id/np"
-        android:text="Enter studentnumber" />
-
-    <Button
         android:id="@+id/btnDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/btnTitle"
+        android:layout_below="@+id/np"
+        android:layout_centerHorizontal="true"
         android:text="Enter reason reservation" />
 
 

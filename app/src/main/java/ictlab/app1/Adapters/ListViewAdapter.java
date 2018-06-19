@@ -11,6 +11,10 @@ import java.util.List;
 
 import ictlab.app1.R;
 
+/**
+ * This whole code underneath this line is coded by Edgar Buyten - 0912718
+ */
+
 public class ListViewAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater layoutInflater;

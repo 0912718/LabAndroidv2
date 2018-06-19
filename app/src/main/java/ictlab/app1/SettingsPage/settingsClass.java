@@ -1,14 +1,12 @@
-package ictlab.app1;
+package ictlab.app1.SettingsPage;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import ictlab.app1.R;
 
-/**
- * Created by edgar on 24-2-2018.
- */
 
 public class settingsClass extends Activity {
 

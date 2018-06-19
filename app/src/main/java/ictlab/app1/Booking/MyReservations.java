@@ -153,7 +153,7 @@ public class MyReservations extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("http://145.24.222.187:3000/api/v1/reservations/" + id)
+                .url("http://192.168.0.101:3000/api/v1/reservations/" + id)
                 .delete()
                 .addHeader("Content-Type", "application/json")
                 .addHeader("client", clientToken)

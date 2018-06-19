@@ -54,7 +54,7 @@ public class ReservationsAdapter extends BaseAdapter {
 
         TextView date = convertView.findViewById(R.id.reserveringid);
         ReservationsList r = reservationsLists.get(position);
-        date.setText(r.getDate() + " " + r.getTitle());
+        date.setText(r.getTitle());
 
 
         return convertView;

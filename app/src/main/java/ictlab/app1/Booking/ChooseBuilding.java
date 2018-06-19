@@ -39,7 +39,7 @@ import ictlab.app1.R;
 
 public class ChooseBuilding extends AppCompatActivity {
     public TextView textView;
-    public String buildings_url = "http://145.24.222.187:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
+    public String buildings_url = "http://192.168.0.101:3000/api/v1/buildings";// "http://192.168.2.6:3000/buildings.json"; TODO ENTER IP ADDRESS HERE
     RequestQueue requestQueue;
     private ProgressDialog progressDialog;
     private List<BuildingList> buildingListList = new ArrayList<>();
@@ -75,9 +75,9 @@ public class ChooseBuilding extends AppCompatActivity {
                         System.out.println(response.toString());
                         progressDialog.hide();
                         try {
-                            JSONArray array = response.getJSONArray("buildings");
-                        for (int i = 0; i < array.length(); i++) {
-                                JSONObject obj = array.getJSONObject(i);
+                                JSONArray array = response.getJSONArray("buildings");
+                                for (int i = 0; i < array.length(); i++) {
+                                    JSONObject obj = array.getJSONObject(i);
                                 //JSONArray jsonArray = obj.getJSONArray("buildings");
                                // String classroom = obj.getString("classrooms");
                                 BuildingList buildingList = new BuildingList();

@@ -42,7 +42,7 @@ public class reservationClass extends Activity {
     private ListView listView;
     public String accessToken, clientToken, uid;
     private List<ReservationsList> reservationsListList = new ArrayList<>();
-    public String myresURL = "http://145.24.222.187:3000/api/v1/reservations"; //TODO
+    public String myresURL = "http://192.168.0.101:3000/api/v1/reservations"; //TODO
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
